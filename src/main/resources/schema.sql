@@ -1,0 +1,7 @@
+CREATE TABLE joueur (
+    id   INTEGER      NOT NULL AUTO_INCREMENT,
+    nom VARCHAR(128) NOT NULL,
+    ordre VARCHAR(128) NOT NULL,
+    score VARCHAR(128) NOT NULL,
+    PRIMARY KEY (id)
+);
