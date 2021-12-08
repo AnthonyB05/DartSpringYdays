@@ -1,6 +1,5 @@
-package com.ydays.dart.repository;
+package com.ydays.dart.joueur;
 
-import com.ydays.dart.model.Joueur;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

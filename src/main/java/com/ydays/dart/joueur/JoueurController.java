@@ -1,7 +1,5 @@
-package com.ydays.dart.controller;
+package com.ydays.dart.joueur;
 
-import com.ydays.dart.model.Joueur;
-import com.ydays.dart.service.JoueurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

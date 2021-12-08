@@ -1,7 +1,5 @@
-package com.ydays.dart.service;
+package com.ydays.dart.joueur;
 
-import com.ydays.dart.model.Joueur;
-import com.ydays.dart.repository.JoueurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
