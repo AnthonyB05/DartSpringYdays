@@ -15,13 +15,13 @@ public class DartApplication {
 		Start start = new Start();
 		AroundTheWorld aroundTheWorld = new AroundTheWorld();
 
-		Player player1 = new Player(1,"Cuffet", "solene.cuffet@hotmail.fr");
-		Player player2 = new Player(2,"Bastard", "bastard@hotmail.fr");
+		Player player1 = new Player(1L,"Cuffet", "solene.cuffet@hotmail.fr");
+		Player player2 = new Player(2L,"Bastard", "bastard@hotmail.fr");
 
-		Game game = new Game(1,1,"test",0,1);
-		ArrayList<GamePlayer> tabJoueur = new ArrayList<GamePlayer>();
-		GamePlayer j1 = new GamePlayer(1,player1,game,0,0,0,0);
-		GamePlayer j2 = new GamePlayer(2,player2,game,0,0,0,0);
+		Game game = new Game(1L,1,"test",0,1);
+		ArrayList<GamePlayer> tabJoueur = new ArrayList<>();
+		GamePlayer j1 = new GamePlayer(1L,player1,game,0,0,0,0);
+		GamePlayer j2 = new GamePlayer(2L,player2,game,0,0,0,0);
 		//GamePlayer j3 = new GamePlayer(3,3,3,0,0,0,0,true);
 
 		tabJoueur.add(j1);
@@ -31,7 +31,7 @@ public class DartApplication {
 /*        int nombreJoueur = start.nbrJoueur();
         int modeJeu = start.modeJeu();*/
 
-		ArrayList<GamePlayer> JoueurOrdre = null;
+		ArrayList<GamePlayer> JoueurOrdre;
 		JoueurOrdre = start.ordreJoueur(tabJoueur);
 		aroundTheWorld.startAroundTheWorld(JoueurOrdre);
 

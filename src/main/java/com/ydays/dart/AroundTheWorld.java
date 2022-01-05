@@ -12,33 +12,29 @@ public class AroundTheWorld {
 
 
     protected void startAroundTheWorld(ArrayList<GamePlayer> listGamer){
-        int winner = 0;
+        Long winner = 0L;
         int ordre = 1;
         //trie la liste en fonction de l'ordre de passage
         listGamer.sort(Comparator.comparing(GamePlayer::getOrder));
 
-        while(true){
-            for (int i = 0; i < listGamer.size(); i++){
-                if (ordre == listGamer.get(i).getOrder()){
-                    winner = getScoreFleche(listGamer.get(i));
-                    if (winner != 0){
+        do {
+            for (GamePlayer gamePlayer : listGamer) {
+                if (ordre == gamePlayer.getOrder()) {
+                    winner = getScoreFleche(gamePlayer);
+                    if (winner != 0) {
                         break;
                     }
-                    ordre ++;
-                }
-                else {
+                    ordre++;
+                } else {
                     ordre = 1;
                 }
             }
             ordre = 1;
-            if (winner != 0){
-                break;
-            }
-        }
+        } while (winner == 0);
     }
 
-    protected int getScoreFleche(GamePlayer joueurEnCours){
-        int winner = 0;
+    protected Long getScoreFleche(GamePlayer joueurEnCours){
+        Long winner = 0L;
         int repNumeroCase;
         joueurEnCours.setRemainingShots(3);
         int nbrTour = joueurEnCours.getRemainingShots();
