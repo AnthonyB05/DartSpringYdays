@@ -24,8 +24,7 @@ public class Game {
 
     public Game(){}
 
-    public Game(int id, int mode, String name, int currentplayerid, int status) {
-        this.id = id;
+    public Game(int mode, String name, int currentplayerid, int status) {
         this.mode = mode;
         this.name = name;
         this.currentplayerid = currentplayerid;

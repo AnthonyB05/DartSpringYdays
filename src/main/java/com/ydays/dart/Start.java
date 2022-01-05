@@ -1,6 +1,8 @@
 package com.ydays.dart;
 
+import com.ydays.dart.game.Game;
 import com.ydays.dart.gamePlayer.GamePlayer;
+import com.ydays.dart.joueur.Player;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -11,7 +13,7 @@ public class Start {
 
     Scanner scanner = new Scanner(System.in);
 
-    protected int nbrJoueur() {
+    private int nbrJoueur() {
         String rep;
         int nombre = 0;
         try {
@@ -28,7 +30,33 @@ public class Start {
         return nombre;
     }
 
-    protected int modeJeu() {
+    protected ArrayList<GamePlayer> createProcessusJeu(Game game){
+        int nbrJoueur = nbrJoueur();
+        String nom;
+        String email;
+        ArrayList<GamePlayer> listJoueurs = new ArrayList<GamePlayer>();
+        for (int i = 0; i < nbrJoueur; i++){
+            System.out.println("Quel est votre nom ? ");
+            nom = scanner.next();
+            System.out.println("Quel est votre email ? ");
+            email = scanner.next();
+            Player player = new Player(nom,email);
+            GamePlayer gamePlayer = new GamePlayer(player,game,0,0,0,0);
+            listJoueurs.add(gamePlayer);
+        }
+        listJoueurs = ordreJoueur(listJoueurs);
+        return listJoueurs;
+    }
+
+    protected Game createGame(){
+        int modeJeu = modeJeu();
+        String nomJeu = nomJeu();
+
+        Game game = new Game(modeJeu,nomJeu,0,1);
+        return game;
+    }
+
+    private int modeJeu() {
         String rep;
         int nombre = 0;
         try {
@@ -46,7 +74,13 @@ public class Start {
         return nombre;
     }
 
-    protected ArrayList<GamePlayer> ordreJoueur(ArrayList<GamePlayer> tabJoueur){
+    private String nomJeu(){
+        System.out.println("Comment voulez-vous nommer votre partie ? ");
+        String rep = scanner.next();
+        return rep;
+    }
+
+    private ArrayList<GamePlayer> ordreJoueur(ArrayList<GamePlayer> tabJoueur){
         ArrayList<GamePlayer> ordreJoueurTab = new ArrayList<GamePlayer>();
         GamePlayer joueurRandom;
         int index;
