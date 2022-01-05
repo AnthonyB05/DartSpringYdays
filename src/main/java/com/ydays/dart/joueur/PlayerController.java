@@ -1,22 +1,22 @@
-package com.ydays.dart.game;
-
+package com.ydays.dart.joueur;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GameController {
+public class PlayerController {
 
     @Autowired
-    private GameService gameService;
+    private PlayerService playerService;
 
     /**
-     * Read - Get all joueurs
+     * Read - Get all players
      * @return - An Iterable object of Player full filled
      */
-    @GetMapping("/games")
-    public Iterable<Game> getGames() {
-        return gameService.getGames();
+    @GetMapping("/players")
+    public Iterable<Player> getPlayers() {
+        return playerService.getPlayers();
     }
+
 }

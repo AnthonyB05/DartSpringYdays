@@ -1,10 +1,13 @@
 package com.ydays.dart.game;
 
+import com.ydays.dart.gamePlayer.GamePlayer;
+
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
-@Table(name = "games")
+@Table(name = "GAMES")
 public class Game {
 
     @Id
@@ -18,6 +21,9 @@ public class Game {
     private int currentplayerid;
 
     private int status;
+
+    @OneToMany(mappedBy="game")
+    private Set<GamePlayer> gamePlayers;
 
     public int getId() {
         return id;

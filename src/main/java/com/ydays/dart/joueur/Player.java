@@ -1,11 +1,14 @@
 package com.ydays.dart.joueur;
 
+import com.ydays.dart.gamePlayer.GamePlayer;
+
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
-@Table(name = "joueurs")
-public class Joueur {
+@Table(name = "PLAYERS")
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +17,9 @@ public class Joueur {
     private String name;
 
     private String email;
+
+    @OneToMany(mappedBy="player")
+    private Set<GamePlayer> gamePlayers;
 
     public int getId() {
         return id;
@@ -43,8 +49,8 @@ public class Joueur {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Joueur joueur = (Joueur) o;
-        return Objects.equals(id, joueur.id) && Objects.equals(name, joueur.name) && Objects.equals(email, joueur.email);
+        Player player = (Player) o;
+        return Objects.equals(id, player.id) && Objects.equals(name, player.name) && Objects.equals(email, player.email);
     }
 
     @Override
@@ -54,7 +60,7 @@ public class Joueur {
 
     @Override
     public String toString() {
-        return "Joueur{" +
+        return "Player{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +

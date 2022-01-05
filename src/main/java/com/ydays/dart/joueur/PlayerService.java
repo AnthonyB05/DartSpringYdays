@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class JoueurService {
+public class PlayerService {
 
     @Autowired
-    private JoueurRepository joueurRepository;
+    private PlayerRepository playerRepository;
 
-    public Iterable<Joueur> getJoueurs() {
-        return joueurRepository.findAll();
+    public Iterable<Player> getPlayers() {
+        return playerRepository.findAll();
     }
 }
