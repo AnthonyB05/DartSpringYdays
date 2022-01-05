@@ -18,6 +18,14 @@ public class Player {
 
     private String email;
 
+    public Player(){}
+
+    public Player(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+
     @OneToMany(mappedBy="player")
     private Set<GamePlayer> gamePlayers;
 

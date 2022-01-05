@@ -22,6 +22,16 @@ public class Game {
 
     private int status;
 
+    public Game(){}
+
+    public Game(int id, int mode, String name, int currentplayerid, int status) {
+        this.id = id;
+        this.mode = mode;
+        this.name = name;
+        this.currentplayerid = currentplayerid;
+        this.status = status;
+    }
+
     @OneToMany(mappedBy="game")
     private Set<GamePlayer> gamePlayers;
 
