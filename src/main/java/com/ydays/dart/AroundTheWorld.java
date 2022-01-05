@@ -39,6 +39,8 @@ public class AroundTheWorld {
         joueurEnCours.setRemainingShots(3);
         int nbrTour = joueurEnCours.getRemainingShots();
         for (int i = 1; i <= 3; i++){
+            //TODO : A corriger constructor manque id et corriger current id
+            joueurEnCours.getGame().setCurrentplayerid(joueurEnCours.getPlayer().getId());
             System.out.println("Fleche " + i + " autour du joueur " + joueurEnCours.getPlayer().getName() + " tu dois viser la case " + (joueurEnCours.getScore()+ 1));
             String rep = scanner.next();
             repNumeroCase = Integer.parseInt(rep);
@@ -48,6 +50,8 @@ public class AroundTheWorld {
                 joueurEnCours.setScore(repNumeroCase);
                 if (joueurEnCours.getScore() == 20){
                     System.out.println("Le joueur " + joueurEnCours.getPlayer().getName() + " a gagné");
+                    joueurEnCours.getGame().setStatus(0);
+                    joueurEnCours.setRank(1);
                     winner = joueurEnCours.getPlayer().getId();
                 }
             }
