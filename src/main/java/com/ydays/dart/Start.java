@@ -1,6 +1,6 @@
 package com.ydays.dart;
 
-import com.ydays.dart.model.Joueur;
+import com.ydays.dart.joueur.Player;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -46,21 +46,21 @@ public class Start {
         return nombre;
     }
 
-    protected ArrayList<Joueur> ordreJoueur(ArrayList<Joueur> tabJoueur){
-        ArrayList<Joueur> ordreJoueurTab = new ArrayList<Joueur>();
-        Joueur joueurRandom;
+    protected ArrayList<Player> ordreJoueur(ArrayList<Player> tabPlayer){
+        ArrayList<Player> ordrePlayerTab = new ArrayList<Player>();
+        Player playerRandom;
         int index;
-        for (int i =0; i < tabJoueur.size(); i++){
-            index = new Random().nextInt(tabJoueur.size());
-            joueurRandom = tabJoueur.get(index);
+        for (int i = 0; i < tabPlayer.size(); i++){
+            index = new Random().nextInt(tabPlayer.size());
+            playerRandom = tabPlayer.get(index);
 
-            while (ordreJoueurTab.contains(joueurRandom)){
-                index = new Random().nextInt(tabJoueur.size());
-                joueurRandom = tabJoueur.get(index);
+            while (ordrePlayerTab.contains(playerRandom)){
+                index = new Random().nextInt(tabPlayer.size());
+                playerRandom = tabPlayer.get(index);
             }
-            joueurRandom.setOrdre(i+1);
-            ordreJoueurTab.add(joueurRandom);
+            //playerRandom.setOrdre(i+1);
+            ordrePlayerTab.add(playerRandom);
         }
-        return  ordreJoueurTab;
+        return ordrePlayerTab;
     }
 }
