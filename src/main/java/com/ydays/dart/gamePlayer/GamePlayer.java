@@ -30,6 +30,18 @@ public class GamePlayer{
 
     private int rank;
 
+    public GamePlayer(){}
+
+    public GamePlayer(int id, Player player, Game game, int remainingShots, int score, int order, int rank) {
+        this.id = id;
+        this.player = player;
+        this.game = game;
+        this.remainingShots = remainingShots;
+        this.score = score;
+        this.order = order;
+        this.rank = rank;
+    }
+
     public int getId() {
         return id;
     }

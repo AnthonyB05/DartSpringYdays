@@ -1,7 +1,6 @@
 package com.ydays.dart;
 
-import com.ydays.dart.model.GamePlayer;
-import com.ydays.dart.model.Joueur;
+import com.ydays.dart.gamePlayer.GamePlayer;
 
 import java.util.ArrayList;
 import java.util.Random;
