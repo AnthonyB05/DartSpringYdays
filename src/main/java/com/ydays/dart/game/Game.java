@@ -12,19 +12,19 @@ public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private int mode;
 
     private String name;
 
-    private int currentplayerid;
+    private Long currentplayerid;
 
     private int status;
 
     public Game(){}
 
-    public Game(int mode, String name, int currentplayerid, int status) {
+    public Game(int mode, String name, Long currentplayerid, int status) {
         this.mode = mode;
         this.name = name;
         this.currentplayerid = currentplayerid;
@@ -34,11 +34,11 @@ public class Game {
     @OneToMany(mappedBy="game")
     private Set<GamePlayer> gamePlayers;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -58,11 +58,11 @@ public class Game {
         this.name = name;
     }
 
-    public int getCurrentplayerid() {
+    public Long getCurrentplayerid() {
         return currentplayerid;
     }
 
-    public void setCurrentplayerid(int currentPlayerId) {
+    public void setCurrentplayerid(Long currentPlayerId) {
         this.currentplayerid = currentPlayerId;
     }
 
