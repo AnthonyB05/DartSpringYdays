@@ -1,5 +1,6 @@
 package com.ydays.dart;
 
+import com.ydays.dart.model.GamePlayer;
 import com.ydays.dart.model.Joueur;
 
 import java.util.ArrayList;
@@ -46,9 +47,9 @@ public class Start {
         return nombre;
     }
 
-    protected ArrayList<Joueur> ordreJoueur(ArrayList<Joueur> tabJoueur){
-        ArrayList<Joueur> ordreJoueurTab = new ArrayList<Joueur>();
-        Joueur joueurRandom;
+    protected ArrayList<GamePlayer> ordreJoueur(ArrayList<GamePlayer> tabJoueur){
+        ArrayList<GamePlayer> ordreJoueurTab = new ArrayList<GamePlayer>();
+        GamePlayer joueurRandom;
         int index;
         for (int i =0; i < tabJoueur.size(); i++){
             index = new Random().nextInt(tabJoueur.size());
@@ -58,7 +59,7 @@ public class Start {
                 index = new Random().nextInt(tabJoueur.size());
                 joueurRandom = tabJoueur.get(index);
             }
-            joueurRandom.setOrdre(i+1);
+            joueurRandom.setOrder(i+1);
             ordreJoueurTab.add(joueurRandom);
         }
         return  ordreJoueurTab;

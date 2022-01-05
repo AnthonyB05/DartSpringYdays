@@ -13,7 +13,7 @@ public class Joueur {
 
     private String nom;
 
-    private String ordre;
+    private int ordre;
 
     private String score;
 
@@ -33,11 +33,11 @@ public class Joueur {
         this.nom = nom;
     }
 
-    public String getOrdre() {
+    public int getOrdre() {
         return ordre;
     }
 
-    public void setOrdre(String ordre) {
+    public void setOrdre(int ordre) {
         this.ordre = ordre;
     }
 
@@ -46,6 +46,15 @@ public class Joueur {
     }
 
     public void setScore(String score) {
+        this.score = score;
+    }
+
+    public Joueur(){};
+
+    public Joueur(Long id, String nom, int ordre, String score) {
+        this.id = id;
+        this.nom = nom;
+        this.ordre = ordre;
         this.score = score;
     }
 
