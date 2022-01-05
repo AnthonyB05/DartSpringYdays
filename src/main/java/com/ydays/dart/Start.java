@@ -52,7 +52,7 @@ public class Start {
         int modeJeu = modeJeu();
         String nomJeu = nomJeu();
 
-        Game game = new Game(modeJeu,nomJeu,0,1);
+        Game game = new Game(modeJeu,nomJeu,0L,1);
         return game;
     }
 

@@ -32,8 +32,7 @@ public class GamePlayer{
 
     public GamePlayer(){}
 
-    public GamePlayer(Long id, Player player, Game game, int remainingShots, int score, int order, int rank) {
-        this.id = id;
+    public GamePlayer(Player player, Game game, int remainingShots, int score, int order, int rank) {
         this.player = player;
         this.game = game;
         this.remainingShots = remainingShots;

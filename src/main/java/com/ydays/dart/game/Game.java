@@ -18,14 +18,13 @@ public class Game {
 
     private String name;
 
-    private int currentplayerid;
+    private Long currentplayerid;
 
     private int status;
 
     public Game(){}
 
-    public Game(Long id, int mode, String name, int currentplayerid, int status) {
-        this.id = id;
+    public Game(int mode, String name, Long currentplayerid, int status) {
         this.mode = mode;
         this.name = name;
         this.currentplayerid = currentplayerid;
@@ -59,11 +58,11 @@ public class Game {
         this.name = name;
     }
 
-    public int getCurrentplayerid() {
+    public Long getCurrentplayerid() {
         return currentplayerid;
     }
 
-    public void setCurrentplayerid(int currentPlayerId) {
+    public void setCurrentplayerid(Long currentPlayerId) {
         this.currentplayerid = currentPlayerId;
     }
 

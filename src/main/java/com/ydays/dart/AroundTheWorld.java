@@ -12,29 +12,29 @@ public class AroundTheWorld {
 
 
     protected void startAroundTheWorld(ArrayList<GamePlayer> listGamer){
-        Long winner = 0L;
+        boolean winner = false;
         int ordre = 1;
         //trie la liste en fonction de l'ordre de passage
         listGamer.sort(Comparator.comparing(GamePlayer::getOrder));
 
-        do {
+        while (!winner){
             for (GamePlayer gamePlayer : listGamer) {
                 if (ordre == gamePlayer.getOrder()) {
                     winner = getScoreFleche(gamePlayer);
-                    if (winner != 0) {
+                    ordre++;
+                    if (winner) {
                         break;
                     }
-                    ordre++;
                 } else {
                     ordre = 1;
                 }
             }
             ordre = 1;
-        } while (winner == 0);
+        }
     }
 
-    protected Long getScoreFleche(GamePlayer joueurEnCours){
-        Long winner = 0L;
+    protected boolean getScoreFleche(GamePlayer joueurEnCours){
+        boolean winner = false;
         int repNumeroCase;
         joueurEnCours.setRemainingShots(3);
         int nbrTour = joueurEnCours.getRemainingShots();
@@ -48,18 +48,18 @@ public class AroundTheWorld {
             joueurEnCours.setRemainingShots(nbrTour);
             if (repNumeroCase == joueurEnCours.getScore() + 1){
                 joueurEnCours.setScore(repNumeroCase);
-                if (joueurEnCours.getScore() == 20){
+                if (joueurEnCours.getScore() == 5){
                     System.out.println("Le joueur " + joueurEnCours.getPlayer().getName() + " a gagné");
                     joueurEnCours.getGame().setStatus(0);
                     joueurEnCours.setRank(1);
-                    winner = joueurEnCours.getPlayer().getId();
+                    winner = true;
                 }
             }
             else{
                 System.out.println("Raté il vous reste " + joueurEnCours.getRemainingShots() + " tours");
             }
 
-            if (winner != 0){
+            if (winner){
                 break;
             }
         }
